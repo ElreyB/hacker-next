@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import Error from 'next/error';
 import styled from 'styled-components';
+import StoryList from '../components/StoryList';
 
 const Title = styled.h1``;
 
@@ -28,11 +29,7 @@ class Index extends React.Component {
     return (
       <div>
         <Title>Hacker Next</Title>
-        <div>
-          {stories.map(story => (
-            <h2 key={story.id}>{story.title}</h2>
-          ))}
-        </div>
+        <StoryList stories={stories} />
       </div>
     );
   }
